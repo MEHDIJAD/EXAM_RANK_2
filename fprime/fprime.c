@@ -2,7 +2,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-//! for 804577 the loop will go on intel it get to 804577 and it will print the only prime div
 
 int *fprime(unsigned int nb)
 {
