@@ -4,9 +4,7 @@ int ft_strlen(char *str)
 {
     int len = 0;
     while (str[len])
-    {
         len++;
-    }
     return (len);
 }
 int main(int ac, char *av[])
@@ -17,7 +15,7 @@ int main(int ac, char *av[])
         i = ft_strlen(av[1]);
         while ( i > 0)
         {
-            i--;
+            i--; //! to point to the last char ,not to '\0'
             write(1, &av[1][i], 1);
         }
     }

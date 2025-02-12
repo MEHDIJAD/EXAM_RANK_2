@@ -23,20 +23,21 @@ unsigned int ft_counttokens(char const *str, char c)
 }
 
 
-unsigned int ft_count_word(const char *str, int i, char c)
+unsigned int ft_count_word(const char *str, int j, char c)
 {
     int len;
 
     len = 0;
-    while (str[i] != c && str[i])
+    while (str[j] != c && str[j])
     {
         len++;
-        i++;
+        j++;
     }
     return (len);
 }
 char **ft_free(char **vic, int i)
 {
+    //? decrement befor freeing ,if i = 5(5/malloc) , (5 - 1) = 4 free 4,3,2,1,0(5/free)
     while (i > 0)
         free(vic[--i]);
     free(vic);
@@ -86,11 +87,15 @@ void ft_putstr(char *str)
 int main(int ac, char *av[])
 {
     int i = 0;
+    int j;
+    char **ptr;
+
     if (ac == 2)
     {
-        char **ptr = ft_split(av[1], ' ');
+        ptr = ft_split(av[1], ' ');
         while (ptr[i] != NULL)
             i++;
+        j = i;
         while (i > 0)
         {
             ft_putstr(ptr[--i]);
@@ -98,6 +103,7 @@ int main(int ac, char *av[])
                 write(1, " ", 1);
         }
     }
+    ft_free(ptr, j);
     write(1, "\n", 1);
     return (0);
 }    

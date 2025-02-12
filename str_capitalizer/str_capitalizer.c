@@ -35,6 +35,7 @@ int main(int ac, char *av[])
             j = 0;
             while (av[i][j])
             {
+                //* if char && (beginnig of str || before it space)
                 if (ft_isalpha(av[i][j]) && (j == 0 || ft_isspace(av[i][j - 1])))
                 {
                     if (ft_islower(av[i][j]))

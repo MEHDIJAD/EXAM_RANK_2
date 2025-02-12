@@ -1,3 +1,10 @@
+/*
+! to get the rep of an alpha:
+* we do : char - 'a' + 1 
+* exemple --> for 'a' -> 97 - 97 = 0 + 1 = 1 a  
+*         --> for 'b' -> 98 - 97 = 1 + 1 = 2 bb
+*/
+
 #include <unistd.h>
 #include <stdio.h>
 

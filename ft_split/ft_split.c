@@ -1,4 +1,4 @@
-// #include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
 
 
@@ -72,18 +72,15 @@ char    **ft_split(char *str)
     return (split);
 }
 
-// int main(int ac , char *av[])
-// {
-//     if (ac == 2)
-//     {
-//         int t = ft_counttokens(av[1], ' ');
-//         printf("%d", t);
-//         char **ptr = ft_split(av[1]);
-//         for(int i = 0; i < t; i++)
-//         {
-//             printf("%s", ptr[i]);
-//         }
-
-
-//     }
-// }
+int main(int ac , char *av[])
+{
+    if (ac == 2)
+    {
+        int t = ft_counttokens(av[1], ' ');
+        char **ptr = ft_split(av[1]);
+        for(int i = 0; i < t; i++)
+        {
+            printf("%s\n", ptr[i]);
+        }
+    }
+}
