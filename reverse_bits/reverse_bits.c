@@ -1,33 +1,37 @@
 #include <unistd.h>
 unsigned char	reverse_bits(unsigned char octet)
 {
-	unsigned char r = 0;
-	int j = 8;
+	unsigned char reversed = 0;
+	int i = 0;
 
-	while (j--)
+	while (i < 8)
 	{
-		r = r * 2 + octet % 2;
-		octet /= 2;
+		reversed = (reversed << 1) | (octet & 1);
+		octet >>= 1;
+		i++;
 	}
-	return r;
+	return (reversed);
 }
 
-void print_bits(unsigned char octet)
+void	print_bits(unsigned char octet)
 {
-	unsigned char a =0;
-	int j =8;
+	int i = 7;
 
-	while (j--)
+	while (i >= 0)
 	{
-		a = (octet >> j & 1)+ 48;
-		write (1, &a, 1);
+		char bit;
+		if ((octet >> i) & 1)
+			bit = '1';
+		else
+			bit = '0';
+		write(1, &bit, 1);
+		i--;
 	}
-
-
 }
+
 int main()
 {
-	print_bits(13);
+	print_bits(97);
 	write (1, "\n", 1);
-	print_bits(reverse_bits(13));
+	print_bits(reverse_bits(97));
 }
