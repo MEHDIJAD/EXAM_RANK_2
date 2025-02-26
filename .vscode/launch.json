@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": false,
-      "cwd": "/home/eel-garo/code/EXAM_RANK_2/alpha_mirror",
-      "program": "/home/eel-garo/code/EXAM_RANK_2/alpha_mirror/build/Debug/outDebug",
+      "cwd": "/home/eel-garo/Desktop/EXAM_RANK_2/Level-2/10-ft_strrev-s",
+      "program": "/home/eel-garo/Desktop/EXAM_RANK_2/Level-2/10-ft_strrev-s/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
