@@ -19,10 +19,13 @@ char    *ft_strrev(char *str)
 {
     size_t len = ft_strlen(str);
     int i = 0;
-    while(len > 0)
+    char temp;
+
+    while(i  < len / 2)
     {
-        str[i] = str[len];
-        len--;
+        temp = str[i];
+        str[i] = str[len - 1 - i];
+        str[len - 1 - i] = temp;
         i++;
     }
     return (str);
@@ -32,7 +35,7 @@ int main(int ac, char *av[])
 {
     if (ac == 2)
     {
-       ft_strrev(av[1]);
+       printf("%s\n",ft_strrev(av[1]));
     }
     return (0);
 }
